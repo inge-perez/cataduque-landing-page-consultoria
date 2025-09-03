@@ -1,0 +1,90 @@
+@import 'tailwindcss';
+
+@layer base {
+    :root {
+        /* Colores branding */
+        --color-primary: #6e48ff;
+        --color-secondary: #00c2ff;
+        --color-tertiary: #11174b;
+        --color-dark: #3d4250;
+        --color-muted: #6b7280;
+
+        /* Border radius */
+        --radius-xl: 16px;
+        --radius-2xl: 24px;
+
+        /* Sombra */
+        --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.08);
+        --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.15);
+    }
+}
+
+/* Colores de fondo y texto */
+.bg-primary {
+    background-color: var(--color-primary);
+}
+.bg-secondary {
+    background-color: var(--color-secondary);
+}
+.bg-tertiary {
+    background-color: var(--color-tertiary);
+}
+.text-primary {
+    color: var(--color-primary);
+}
+.text-secondary {
+    color: var(--color-secondary);
+}
+.text-tertiary {
+    color: var(--color-tertiary);
+}
+
+/* Gradientes */
+.from-primary {
+    --tw-gradient-from: var(--color-primary);
+}
+.to-primary {
+    --tw-gradient-to: var(--color-primary);
+}
+.from-secondary {
+    --tw-gradient-from: var(--color-secondary);
+}
+.to-secondary {
+    --tw-gradient-to: var(--color-secondary);
+}
+.from-tertiary {
+    --tw-gradient-from: var(--color-tertiary);
+}
+.to-tertiary {
+    --tw-gradient-to: var(--color-tertiary);
+}
+
+/* Border radius */
+.rounded-xl {
+    border-radius: var(--radius-xl);
+}
+.rounded-2xl {
+    border-radius: var(--radius-2xl);
+}
+
+/* Sombra */
+.shadow-card {
+    box-shadow: var(--shadow-card);
+}
+.shadow-2xl {
+    box-shadow: var(--shadow-2xl);
+}
+
+/* Extras */
+.bg-secondary\/20 {
+    background-color: rgba(0, 194, 255, 0.2);
+}
+.hover\:bg-secondary\/10:hover {
+    background-color: rgba(0, 194, 255, 0.1);
+}
+.hover\:bg-secondary\/90:hover {
+    background-color: rgba(0, 194, 255, 0.9);
+}
+.ring-secondary\/30 {
+    ring-color: rgba(0, 194, 255, 0.3);
+}
