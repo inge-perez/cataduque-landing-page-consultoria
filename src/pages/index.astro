@@ -1,549 +1,518 @@
 ---
-import Layout, { BRAND, WHATSAPP_MSG } from '../layouts/layout.astro';
+import Layout, { BRAND, WHATSAPP_MSG } from '../layouts/layout.astro'
 
-import CataPhoto from '../assets/cata_duque_hero.jpg'; // cámbialo por la ruta real
-import logo1 from '../assets/clientes/fondo-de-garanatias.png';
-import logo2 from '../assets/clientes/la_urbe.jpeg';
-import logo3 from '../assets/clientes/bbe.jpeg';
+import CataPhoto from '../assets/cata_duque_hero.jpg' // cámbialo por la ruta real
+import logo1 from '../assets/clientes/fondo-de-garanatias.png'
+import logo2 from '../assets/clientes/la_urbe.jpeg'
+import logo3 from '../assets/clientes/bbe.jpeg'
+import Leads from '../components/Leads.astro'
 ---
 
-<Layout title="Cata Duque | Consultoría en Recursos Humanos">
-    <main class="font-sans text-gray-800">
-        <!-- Hero -->
-        <section
-            class="relative bg-gradient-to-br from-tertiary to-primary text-white py-16"
+<Layout title='Cata Duque | Consultoría en Recursos Humanos'>
+  <main class='font-sans text-gray-800'>
+    <!-- Hero -->
+    <section class='relative bg-tertiary text-white'>
+      <div class='absolute inset-0'>
+        <img
+          src='/hero-bg.jpg'
+          alt='Personas trabajando en equipo en oficina'
+          class='w-full h-full object-cover opacity-30'
+        />
+        <div
+          class='absolute inset-0 bg-gradient-to-r from-tertiary via-tertiary/80 to-tertiary/60'
         >
-            <div
-                class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-12 items-center"
+        </div>
+      </div>
+
+      <div
+        class='relative z-10 max-w-6xl mx-auto px-6 lg:px-12 py-20 flex flex-col lg:flex-row items-center gap-12'
+      >
+        <!-- Columna izquierda -->
+        <div class='flex-1 text-center lg:text-left'>
+          <img
+            src='/logo.svg'
+            alt='Logo Cataduque Consultoría'
+            class='h-12 mx-auto lg:mx-0 mb-6'
+          />
+
+          <h1
+            class='text-4xl lg:text-5xl font-extrabold leading-tight text-white'
+          >
+            Impulsa tu equipo con <span class='text-secondary'
+              >gestión humana estratégica</span
             >
-                <!-- Columna texto -->
-                <div>
-                    <!-- Logo -->
-                    <div class="mb-6">
-                        <img
-                            src={logo1.src}
-                            alt="Logo Cata Duque"
-                            class="h-12"
-                            loading="lazy"
-                        />
-                    </div>
+          </h1>
 
-                    <span
-                        class="inline-block bg-secondary/20 text-secondary px-3 py-1 rounded-full text-sm font-medium"
-                    >
-                        Consultoría en RRHH
-                    </span>
+          <p
+            class='mt-6 text-lg lg:text-xl text-gray-100 max-w-lg mx-auto lg:mx-0'
+          >
+            Más de 9 años ayudando a líderes de RRHH a reducir la rotación,
+            aumentar la satisfacción de los equipos y optimizar procesos de
+            talento humano.
+          </p>
 
-                    <h1
-                        class="mt-4 text-3xl md:text-5xl font-extrabold leading-tight"
-                    >
-                        Consultoría en Recursos Humanos para empresas que
-                        retienen talento
-                    </h1>
+          <!-- CTA -->
+          <div
+            class='mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start'
+          >
+            <a
+              href='#form'
+              class='px-6 py-3 bg-secondary text-tertiary font-semibold rounded-xl shadow-md hover:bg-secondary/90 transition'
+            >
+              Quiero mi diagnóstico
+            </a>
+            <a
+              href='#servicios'
+              class='px-6 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-tertiary transition'
+            >
+              Ver servicios
+            </a>
+          </div>
+        </div>
 
-                    <p class="mt-4 text-lg text-gray-200 max-w-lg">
-                        Más de 9 años ayudando a líderes de RRHH a reducir la
-                        rotación, aumentar la satisfacción de los equipos y
-                        optimizar procesos.
-                    </p>
+        <!-- Columna derecha (imagen) -->
+        <div class='flex-1'>
+          <img
+            src={CataPhoto.src}
+            alt='Catalina Duque, consultora en gestión humana'
+            class='w-80 lg:w-full max-w-sm mx-auto rounded-2xl shadow-card'
+          />
+        </div>
+      </div>
+    </section>
 
-                    <!-- Botones -->
-                    <div class="mt-6 flex flex-wrap gap-4">
-                        <a
-                            class="px-6 py-3 bg-secondary text-tertiary font-semibold rounded-xl shadow hover:bg-secondary/90 transition"
-                            href={`https://wa.me/${BRAND.whatsapp}?text=${WHATSAPP_MSG}`}
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Agenda una asesoría gratuita
-                        </a>
-                        <a
-                            class="px-6 py-3 border-2 border-secondary text-secondary font-semibold rounded-xl hover:bg-secondary/10 transition"
-                            href="#form"
-                        >
-                            Quiero mi diagnóstico
-                        </a>
-                    </div>
+    <!-- Beneficios -->
+    <section
+      id='beneficios'
+      class='py-24 bg-gradient-to-b from-white via-violet-50 to-white'
+    >
+      <div class='max-w-6xl mx-auto px-6 text-center'>
+        <h2 class='text-3xl md:text-4xl font-bold text-violet-700 mb-4'>
+          Beneficios Claros
+        </h2>
+        <p class='text-gray-600 max-w-2xl mx-auto mb-16'>
+          Porque invertir en tu equipo es invertir en el futuro de tu
+          organización.
+        </p>
 
-                    <!-- Logos confianza -->
-                    <div class="mt-8">
-                        <small class="block text-gray-300 mb-2"
-                            >Confían en mí:</small
-                        >
-                        <div class="flex gap-4 items-center">
-                            <img
-                                src={logo1.src}
-                                alt="Empresa 1"
-                                class="h-10"
-                                loading="lazy"
-                            />
-                            <img
-                                src={logo2.src}
-                                alt="Empresa 2"
-                                class="h-8"
-                                loading="lazy"
-                            />
-                            <img
-                                src={logo3.src}
-                                alt="Empresa 3"
-                                class="h-8"
-                                loading="lazy"
-                            />
-                        </div>
-                    </div>
-                </div>
+        <div class='grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8'>
+          <!-- Card -->
+          <div
+            class='group bg-white shadow-lg rounded-2xl p-6 border border-violet-100
+               hover:shadow-2xl transition duration-300 hover:-translate-y-2
+               relative overflow-hidden'
+          >
+            <!-- borde superior animado -->
+            <span
+              class='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 to-teal-400 opacity-0 group-hover:opacity-100 transition duration-500'
+            ></span>
 
-                <!-- Imagen -->
-                <div class="relative">
-                    <div
-                        class="rounded-2xl overflow-hidden shadow-2xl ring-4 ring-secondary/30"
-                    >
-                        <img
-                            src={CataPhoto.src}
-                            alt="Cata Duque: Consultora en Recursos Humanos"
-                            width="640"
-                            height="760"
-                            class="w-full h-auto object-cover"
-                            loading="eager"
-                        />
-                    </div>
-                </div>
+            <div
+              class='text-teal-500 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300'
+            >
+              📉
             </div>
-        </section>
+            <h4 class='text-lg font-semibold text-gray-800 mb-2'>
+              Reduce la rotación
+            </h4>
+            <p class='text-gray-600 text-sm'>
+              Estrategias comprobadas de retención y plan de carrera.
+            </p>
+          </div>
 
-        <!-- Beneficios -->
-        <section
-            id="beneficios"
-            class="py-20 bg-linear-to-b from-white via-violet-50 to-white"
-        >
-            <div class="max-w-6xl mx-auto px-6 text-center">
-                <h2
-                    class="text-3xl md:text-4xl font-bold text-violet-700 mb-12"
-                >
-                    Beneficios Claros
-                </h2>
+          <!-- Card 2 -->
+          <div
+            class='group bg-white shadow-lg rounded-2xl p-6 border border-violet-100
+               hover:shadow-2xl transition duration-300 hover:-translate-y-2
+               relative overflow-hidden'
+          >
+            <span
+              class='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 to-teal-400 opacity-0 group-hover:opacity-100 transition duration-500'
+            ></span>
 
-                <div
-                    class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
-                >
-                    <!-- Card 1 -->
-                    <div
-                        class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition duration-300 border border-violet-100"
-                    >
-                        <div class="text-teal-500 text-4xl mb-4">📉</div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                            Reduce la rotación
-                        </h4>
-                        <p class="text-gray-600 text-sm">
-                            Estrategias comprobadas de retención y plan de
-                            carrera.
-                        </p>
-                    </div>
-
-                    <!-- Card 2 -->
-                    <div
-                        class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition duration-300 border border-violet-100"
-                    >
-                        <div class="text-teal-500 text-4xl mb-4">🚀</div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                            Mejora la productividad
-                        </h4>
-                        <p class="text-gray-600 text-sm">
-                            Optimización de procesos y desempeño de equipos.
-                        </p>
-                    </div>
-
-                    <!-- Card 3 -->
-                    <div
-                        class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition duration-300 border border-violet-100"
-                    >
-                        <div class="text-teal-500 text-4xl mb-4">💡</div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                            Clima laboral positivo
-                        </h4>
-                        <p class="text-gray-600 text-sm">
-                            Programas de bienestar y liderazgo consciente.
-                        </p>
-                    </div>
-
-                    <!-- Card 4 -->
-                    <div
-                        class="bg-white shadow-lg rounded-2xl p-6 hover:shadow-xl transition duration-300 border border-violet-100"
-                    >
-                        <div class="text-teal-500 text-4xl mb-4">⏳</div>
-                        <h4 class="text-lg font-semibold text-gray-800 mb-2">
-                            Contratación más ágil
-                        </h4>
-                        <p class="text-gray-600 text-sm">
-                            Procesos de selección eficientes que ahorran tiempo.
-                        </p>
-                    </div>
-                </div>
+            <div
+              class='text-teal-500 text-4xl mb-4 group-hover:rotate-6 transition-transform duration-300'
+            >
+              🚀
             </div>
-        </section>
+            <h4 class='text-lg font-semibold text-gray-800 mb-2'>
+              Mejora la productividad
+            </h4>
+            <p class='text-gray-600 text-sm'>
+              Optimización de procesos y desempeño de equipos.
+            </p>
+          </div>
 
-        <!-- KPIs -->
-        <section
-            id="about"
-            class="relative py-20 bg-linear-to-b from-violet-50 to-white"
-        >
-            <div class="container mx-auto px-6 md:px-12 lg:px-20">
-                <!-- Título -->
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold text-violet-700">
-                        Quién es {BRAND.name}
-                    </h2>
-                    <p class="mt-4 text-lg text-gray-600 max-w-2xl mx-auto">
-                        Consultora en Recursos Humanos con más de 9 años de
-                        experiencia liderando equipos de hasta 900
-                        colaboradores.
-                    </p>
-                </div>
+          <!-- Card 3 -->
+          <div
+            class='group bg-white shadow-lg rounded-2xl p-6 border border-violet-100
+               hover:shadow-2xl transition duration-300 hover:-translate-y-2
+               relative overflow-hidden'
+          >
+            <span
+              class='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 to-teal-400 opacity-0 group-hover:opacity-100 transition duration-500'
+            ></span>
 
-                <!-- Layout con foto + contenido -->
-                <div class="grid md:grid-cols-2 gap-12 items-center">
-                    <!-- Foto -->
-                    <div class="flex justify-center">
-                        <img
-                            src={CataPhoto.src}
-                            alt="Foto de {BRAND.name}"
-                            class="w-80 h-auto rounded-2xl shadow-xl border-4 border-violet-200"
-                        />
-                    </div>
-
-                    <!-- Texto + KPIs -->
-                    <div>
-                        <p class="text-gray-700 text-lg leading-relaxed mb-6">
-                            “He logrado aumentar la satisfacción laboral en <strong
-                                class="text-violet-700">10%</strong
-                            >, reducir la rotación en <strong
-                                class="text-violet-700">3% anual</strong
-                            > y optimizar procesos de contratación en <strong
-                                class="text-violet-700">30%</strong
-                            >.”
-                        </p>
-
-                        <!-- KPIs -->
-                        <div class="grid grid-cols-3 gap-6 text-center mb-8">
-                            <div>
-                                <p class="text-3xl font-bold text-violet-700">
-                                    +9
-                                </p>
-                                <p class="text-gray-600 text-sm">
-                                    años de experiencia
-                                </p>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-bold text-violet-700">
-                                    -3%
-                                </p>
-                                <p class="text-gray-600 text-sm">
-                                    rotación anual
-                                </p>
-                            </div>
-                            <div>
-                                <p class="text-3xl font-bold text-violet-700">
-                                    30%
-                                </p>
-                                <p class="text-gray-600 text-sm">
-                                    menos tiempo contratación
-                                </p>
-                            </div>
-                        </div>
-
-                        <!-- Logos -->
-                        <div
-                            class="flex justify-center md:justify-start gap-6 items-center mb-6"
-                        >
-                            <img
-                                src={logo1.src}
-                                alt="Empresa 1"
-                                class="h-10 object-contain opacity-80"
-                            />
-                            <img
-                                src={logo2.src}
-                                alt="Empresa 2"
-                                class="h-10 object-contain opacity-80"
-                            />
-                            <img
-                                src={logo3.src}
-                                alt="Empresa 3"
-                                class="h-10 object-contain opacity-80"
-                            />
-                        </div>
-
-                        <!-- CTA -->
-                        <a
-                            href={`https://wa.me/${BRAND.whatsapp}?text=${WHATSAPP_MSG}`}
-                            target="_blank"
-                            rel="noopener"
-                            class="inline-block px-6 py-3 rounded-xl bg-violet-700 text-white font-semibold shadow-lg hover:bg-violet-800 transition"
-                        >
-                            Habla con {BRAND.name} hoy
-                        </a>
-                    </div>
-                </div>
+            <div
+              class='text-teal-500 text-4xl mb-4 group-hover:scale-110 transition-transform duration-300'
+            >
+              💡
             </div>
-        </section>
+            <h4 class='text-lg font-semibold text-gray-800 mb-2'>
+              Clima laboral positivo
+            </h4>
+            <p class='text-gray-600 text-sm'>
+              Programas de bienestar y liderazgo consciente.
+            </p>
+          </div>
 
-        <!-- Proceso -->
-        <section class="py-16 bg-gray-50">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center mb-12">
-                    Mi proceso de trabajo
-                </h2>
-                <div class="grid md:grid-cols-4 gap-8 text-center">
-                    <div class="p-6">
-                        <div class="text-3xl mb-4">🧩</div>
-                        <h3 class="font-semibold mb-2">1. Diagnóstico</h3>
-                        <p>
-                            Analizamos la situación actual de tu equipo y tus
-                            objetivos.
-                        </p>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-3xl mb-4">🎯</div>
-                        <h3 class="font-semibold mb-2">2. Estrategia</h3>
-                        <p>
-                            Diseñamos un plan de acción a la medida de tu
-                            empresa.
-                        </p>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-3xl mb-4">🚀</div>
-                        <h3 class="font-semibold mb-2">3. Implementación</h3>
-                        <p>
-                            Ponemos en marcha las acciones con acompañamiento
-                            continuo.
-                        </p>
-                    </div>
-                    <div class="p-6">
-                        <div class="text-3xl mb-4">📊</div>
-                        <h3 class="font-semibold mb-2">4. Resultados</h3>
-                        <p>
-                            Medimos impacto y optimizamos para asegurar mejoras
-                            reales.
-                        </p>
-                    </div>
-                </div>
+          <!-- Card 4 -->
+          <div
+            class='group bg-white shadow-lg rounded-2xl p-6 border border-violet-100
+               hover:shadow-2xl transition duration-300 hover:-translate-y-2
+               relative overflow-hidden'
+          >
+            <span
+              class='absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-500 to-teal-400 opacity-0 group-hover:opacity-100 transition duration-500'
+            ></span>
+
+            <div
+              class='text-teal-500 text-4xl mb-4 group-hover:rotate-6 transition-transform duration-300'
+            >
+              ⏳
             </div>
-        </section>
+            <h4 class='text-lg font-semibold text-gray-800 mb-2'>
+              Contratación más ágil
+            </h4>
+            <p class='text-gray-600 text-sm'>
+              Procesos de selección eficientes que ahorran tiempo.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <section
-            id="testimonios"
-            class="py-20 bg-linear-to-b from-white to-gray-50"
-        >
-            <div class="max-w-6xl mx-auto px-6 text-center">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-12">
-                    Historias de éxito con Cata
-                </h2>
+    <!-- KPIs -->
+    <section
+      id='about'
+      class='relative py-24 bg-gradient-to-b from-violet-50 to-white'
+    >
+      <div class='container mx-auto px-6 md:px-12 lg:px-20'>
+        <!-- Título -->
+        <div class='text-center mb-16'>
+          <h2 class='text-3xl md:text-4xl font-bold text-violet-700'>
+            Quién soy y cómo puedo ayudarte
+          </h2>
+          <p class='mt-4 text-lg text-gray-600 max-w-2xl mx-auto'>
+            Soy <strong>{BRAND.name}</strong>, consultora en Recursos Humanos
+            con más de 9 años de experiencia liderando equipos de hasta 900
+            colaboradores y generando impacto medible en las organizaciones.
+          </p>
+        </div>
 
-                <div class="grid md:grid-cols-3 gap-8">
-                    <!-- Testimonio 1 -->
-                    <div
-                        class="bg-white p-6 rounded-2xl shadow-md border border-gray-100"
-                    >
-                        <p class="text-lg italic text-gray-700">
-                            “Gracias al acompañamiento de Cata logramos mejorar
-                            el clima laboral y acelerar contrataciones clave.”
-                        </p>
-                        <div
-                            class="mt-4 flex items-center justify-center gap-3"
-                        >
-                            <img
-                                src="/assets/testimonio1.jpg"
-                                alt="Cliente 1"
-                                class="w-12 h-12 rounded-full object-cover"
-                            />
-                            <span class="text-sm text-gray-600"
-                                >Gerente de Talento</span
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Testimonio 2 -->
-                    <div
-                        class="bg-white p-6 rounded-2xl shadow-md border border-gray-100"
-                    >
-                        <p class="text-lg italic text-gray-700">
-                            “Logramos reducir la rotación en un 3% anual gracias
-                            a los procesos implementados.”
-                        </p>
-                        <div
-                            class="mt-4 flex items-center justify-center gap-3"
-                        >
-                            <img
-                                src="/assets/testimonio2.jpg"
-                                alt="Cliente 2"
-                                class="w-12 h-12 rounded-full object-cover"
-                            />
-                            <span class="text-sm text-gray-600"
-                                >CEO Startup Tech</span
-                            >
-                        </div>
-                    </div>
-
-                    <!-- Testimonio 3 -->
-                    <div
-                        class="bg-white p-6 rounded-2xl shadow-md border border-gray-100"
-                    >
-                        <p class="text-lg italic text-gray-700">
-                            “En menos de 6 meses vimos mejoras de más del 10% en
-                            satisfacción laboral.”
-                        </p>
-                        <div
-                            class="mt-4 flex items-center justify-center gap-3"
-                        >
-                            <img
-                                src="/assets/testimonio3.jpg"
-                                alt="Cliente 3"
-                                class="w-12 h-12 rounded-full object-cover"
-                            />
-                            <span class="text-sm text-gray-600"
-                                >Directora RRHH</span
-                            >
-                        </div>
-                    </div>
-                </div>
+        <!-- Layout -->
+        <div class='grid md:grid-cols-2 gap-12 items-center'>
+          <!-- Foto -->
+          <div class='flex justify-center relative'>
+            <div
+              class='rounded-2xl overflow-hidden shadow-xl ring-4 ring-violet-100'
+            >
+              <img
+                src={CataPhoto.src}
+                alt='Foto profesional de {BRAND.name}, consultora en RRHH'
+                class='w-80 h-auto object-cover'
+              />
             </div>
-        </section>
+          </div>
 
-        <section
-            class="py-16 bg-linear-to-r from-violet-100 to-teal-100 text-center"
-        >
-            <div class="max-w-2xl mx-auto">
-                <h2 class="text-2xl font-bold text-gray-800">
-                    Cada día sin optimizar tu gestión de RRHH es tiempo y dinero
-                    que tu empresa pierde.
-                </h2>
-                <p class="mt-4 text-gray-700 text-lg">
-                    Da el primer paso hacia un equipo más productivo y feliz.
+          <!-- Texto + KPIs -->
+          <div>
+            <p class='text-gray-700 text-lg leading-relaxed mb-8'>
+              <em>
+                “Mi propósito es ayudarte a construir equipos más felices y
+                sostenibles. He acompañado empresas a lograr un aumento en la
+                satisfacción laboral de
+                <strong class='text-violet-700'>+10%</strong>, reducir la
+                rotación en
+                <strong class='text-violet-700'>-3% anual</strong> y optimizar procesos
+                de contratación en <strong class='text-violet-700'>30%</strong
+                >.”
+              </em>
+            </p>
+
+            <!-- KPIs -->
+            <div class='grid grid-cols-3 gap-6 text-center mb-10'>
+              <div>
+                <p class='text-4xl font-bold text-violet-700'>+9</p>
+                <p class='text-gray-600 text-sm'>años de experiencia</p>
+              </div>
+              <div>
+                <p class='text-4xl font-bold text-violet-700'>-3%</p>
+                <p class='text-gray-600 text-sm'>rotación anual</p>
+              </div>
+              <div>
+                <p class='text-4xl font-bold text-violet-700'>30%</p>
+                <p class='text-gray-600 text-sm'>
+                  menos tiempo en contratación
                 </p>
-                <a
-                    href="https://wa.me/573001112233?text=Hola%20Cata,%20quiero%20mi%20diagnóstico%20gratuito"
-                    class="mt-6 inline-block bg-violet-600 text-white px-8 py-3 rounded-full shadow-md hover:bg-violet-700 transition"
-                >
-                    👉 Agenda tu asesoría gratuita
-                </a>
+              </div>
             </div>
-        </section>
 
-        <!-- Formulario -->
-        <section id="form" class="py-20 bg-gray-50">
-            <div
-                class="container mx-auto px-6 max-w-3xl grid md:grid-cols-2 gap-12 items-center"
+            <!-- Logos -->
+            <div class='mb-8'>
+              <p class='text-sm text-gray-500 mb-3'>
+                Empresas que han confiado en mí:
+              </p>
+              <div
+                class='flex justify-center md:justify-start gap-6 items-center'
+              >
+                <img
+                  src={logo1.src}
+                  alt='Logo Empresa 1'
+                  class='h-10 object-contain opacity-80 grayscale hover:grayscale-0 transition'
+                />
+                <img
+                  src={logo2.src}
+                  alt='Logo Empresa 2'
+                  class='h-10 object-contain opacity-80 grayscale hover:grayscale-0 transition'
+                />
+                <img
+                  src={logo3.src}
+                  alt='Logo Empresa 3'
+                  class='h-10 object-contain opacity-80 grayscale hover:grayscale-0 transition'
+                />
+              </div>
+            </div>
+
+            <!-- CTA -->
+            <a
+              href={`https://wa.me/${BRAND.whatsapp}?text=${WHATSAPP_MSG}`}
+              target='_blank'
+              rel='noopener'
+              class='inline-block px-8 py-4 rounded-xl bg-violet-700 text-white font-semibold shadow-lg hover:bg-violet-800 transition'
             >
-                <!-- Lado izquierdo -->
-                <div>
-                    <h2 class="text-3xl font-bold mb-4 text-gray-900">
-                        Agenda tu asesoría gratuita
-                    </h2>
-                    <p class="text-gray-600 mb-6">
-                        Completa el formulario y te contactaremos en menos de 24
-                        horas hábiles. También puedes escribirnos directamente
-                        por WhatsApp.
-                    </p>
-                    <div class="flex gap-4">
-                        <a
-                            class="bg-violet-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-violet-700 transition"
-                            href="https://wa.me/573001112233?text=Hola%20Cata%2C%20quiero%20mi%20diagnóstico%20gratuito"
-                            target="_blank"
-                            rel="noopener"
-                        >
-                            Escribir por WhatsApp
-                        </a>
-                        <a
-                            href="#top"
-                            class="px-6 py-3 rounded-2xl border border-gray-300 hover:bg-gray-100 transition"
-                        >
-                            Volver arriba
-                        </a>
-                    </div>
-                </div>
+              Agenda tu diagnóstico gratuito
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
 
-                <!-- Formulario -->
-                <form
-                    id="leadForm"
-                    onsubmit="return false;"
-                    class="bg-white shadow-md rounded-2xl p-8 space-y-4"
-                >
-                    <div class="grid md:grid-cols-2 gap-4">
-                        <div>
-                            <label
-                                for="name"
-                                class="block text-sm font-medium text-gray-700"
-                                >Nombre</label
-                            >
-                            <input
-                                id="name"
-                                name="name"
-                                type="text"
-                                placeholder="Tu nombre"
-                                required
-                                class="mt-1 w-full border rounded-lg p-3 focus:ring-violet-500 focus:border-violet-500"
-                            />
-                        </div>
-                        <div>
-                            <label
-                                for="email"
-                                class="block text-sm font-medium text-gray-700"
-                                >Email</label
-                            >
-                            <input
-                                id="email"
-                                name="email"
-                                type="email"
-                                placeholder="tu@email.com"
-                                required
-                                class="mt-1 w-full border rounded-lg p-3 focus:ring-violet-500 focus:border-violet-500"
-                            />
-                        </div>
-                    </div>
+    <!-- Proceso -->
+    <section class='py-20 bg-white relative'>
+      <div class='container mx-auto px-6 lg:px-12'>
+        <h2 class='text-3xl md:text-4xl font-bold text-center mb-4'>
+          Cómo trabajo contigo y tu equipo
+        </h2>
+        <p class='text-center text-lg text-gray-600 max-w-2xl mx-auto mb-12'>
+          Un proceso claro y enfocado en resultados para transformar la gestión
+          del talento humano en tu empresa.
+        </p>
 
-                    <div>
-                        <label
-                            for="phone"
-                            class="block text-sm font-medium text-gray-700"
-                            >Teléfono / WhatsApp</label
-                        >
-                        <input
-                            id="phone"
-                            name="phone"
-                            type="tel"
-                            placeholder="57 3xx xxx xxxx"
-                            required
-                            class="mt-1 w-full border rounded-lg p-3 focus:ring-violet-500 focus:border-violet-500"
-                        />
-                    </div>
-
-                    <div>
-                        <label
-                            for="message"
-                            class="block text-sm font-medium text-gray-700"
-                            >Mensaje (opcional)</label
-                        >
-                        <textarea
-                            id="message"
-                            name="message"
-                            rows="3"
-                            placeholder="Cuéntanos brevemente tu necesidad"
-                            class="mt-1 w-full border rounded-lg p-3 focus:ring-violet-500 focus:border-violet-500"
-                        ></textarea>
-                    </div>
-
-                    <div class="flex flex-col items-start gap-3">
-                        <button
-                            type="submit"
-                            class="bg-teal-600 text-white px-6 py-3 rounded-2xl shadow-md hover:bg-teal-700 transition"
-                        >
-                            Quiero mi diagnóstico
-                        </button>
-                        <small class="text-gray-500 text-sm"
-                            >Al enviar aceptas nuestra política de privacidad.</small
-                        >
-                    </div>
-                </form>
+        <!-- Timeline -->
+        <div class='relative'>
+          <div class='grid md:grid-cols-4 gap-10 md:gap-8 text-center'>
+            <!-- Step 1 -->
+            <div class='group'>
+              <div
+                class='flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-violet-100 text-violet-600 text-3xl mb-4 group-hover:scale-110 transition-transform'
+              >
+                🧩
+              </div>
+              <h3 class='font-semibold text-lg mb-2'>1. Diagnóstico</h3>
+              <p class='text-gray-600 text-base'>
+                Analizamos la situación actual de tu equipo y definimos los
+                objetivos estratégicos.
+              </p>
             </div>
-        </section>
-    </main>
+
+            <!-- Step 2 -->
+            <div class='group'>
+              <div
+                class='flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-teal-100 text-teal-600 text-3xl mb-4 group-hover:scale-110 transition-transform'
+              >
+                🎯
+              </div>
+              <h3 class='font-semibold text-lg mb-2'>2. Estrategia</h3>
+              <p class='text-gray-600 text-base'>
+                Creamos un plan de acción adaptado a las necesidades de tu
+                organización.
+              </p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class='group'>
+              <div
+                class='flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-violet-100 text-violet-600 text-3xl mb-4 group-hover:scale-110 transition-transform'
+              >
+                🚀
+              </div>
+              <h3 class='font-semibold text-lg mb-2'>3. Implementación</h3>
+              <p class='text-gray-600 text-base'>
+                Acompañamos cada paso para asegurar una ejecución efectiva y
+                sostenible.
+              </p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class='group'>
+              <div
+                class='flex items-center justify-center w-16 h-16 mx-auto rounded-full bg-teal-100 text-teal-600 text-3xl mb-4 group-hover:scale-110 transition-transform'
+              >
+                📊
+              </div>
+              <h3 class='font-semibold text-lg mb-2'>4. Resultados</h3>
+              <p class='text-gray-600 text-base'>
+                Medimos el impacto real y optimizamos para lograr mejoras
+                continuas.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div class='text-center mt-16'>
+          <a
+            href='#form'
+            class='px-8 py-4 bg-violet-600 text-white font-semibold rounded-xl shadow hover:bg-violet-700 transition'
+          >
+            Quiero comenzar mi diagnóstico
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonios -->
+    <section
+      id='testimonios'
+      class='py-20 bg-gradient-to-b from-white to-gray-50'
+    >
+      <div class='max-w-6xl mx-auto px-6 text-center'>
+        <!-- Encabezado -->
+        <h2 class='text-3xl md:text-4xl font-bold text-gray-900 mb-4'>
+          Historias de éxito con Cata
+        </h2>
+        <p class='text-lg text-gray-600 max-w-2xl mx-auto mb-12'>
+          Profesionales y empresas que transformaron su gestión de talento y
+          lograron resultados medibles en clima, retención y desempeño.
+        </p>
+
+        <!-- Grid testimonios -->
+        <div class='grid md:grid-cols-3 gap-8'>
+          <!-- Testimonio 1 -->
+          <div
+            class='bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition'
+          >
+            <p class='text-base md:text-lg italic text-gray-700 line-clamp-4'>
+              “Gracias al acompañamiento de Cata logramos mejorar el clima
+              laboral y acelerar contrataciones clave.”
+            </p>
+            <div class='mt-6 flex items-center justify-center gap-3'>
+              <img
+                src='/assets/testimonio1.jpg'
+                alt='Cliente 1'
+                class='w-12 h-12 rounded-full object-cover'
+              />
+              <div class='text-left'>
+                <span class='block font-medium text-gray-900 text-sm'>
+                  Gerente de Talento
+                </span>
+                <span class='text-xs text-gray-500'>Sector financiero</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio 2 -->
+          <div
+            class='bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition'
+          >
+            <p class='text-base md:text-lg italic text-gray-700 line-clamp-4'>
+              “Logramos reducir la rotación en un 3% anual gracias a los
+              procesos implementados.”
+            </p>
+            <div class='mt-6 flex items-center justify-center gap-3'>
+              <img
+                src='/assets/testimonio2.jpg'
+                alt='Cliente 2'
+                class='w-12 h-12 rounded-full object-cover'
+              />
+              <div class='text-left'>
+                <span class='block font-medium text-gray-900 text-sm'>
+                  CEO Startup Tech
+                </span>
+                <span class='text-xs text-gray-500'>Industria tecnológica</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonio 3 -->
+          <div
+            class='bg-white p-6 rounded-2xl shadow-md border border-gray-100 hover:shadow-lg transition'
+          >
+            <p class='text-base md:text-lg italic text-gray-700 line-clamp-4'>
+              “En menos de 6 meses vimos mejoras de más del 10% en satisfacción
+              laboral.”
+            </p>
+            <div class='mt-6 flex items-center justify-center gap-3'>
+              <img
+                src='/assets/testimonio3.jpg'
+                alt='Cliente 3'
+                class='w-12 h-12 rounded-full object-cover'
+              />
+              <div class='text-left'>
+                <span class='block font-medium text-gray-900 text-sm'>
+                  Directora RRHH
+                </span>
+                <span class='text-xs text-gray-500'>Empresa multinacional</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class='py-20 bg-gradient-to-r from-violet-100 to-teal-100 text-center relative overflow-hidden'
+    >
+      <!-- Fondo decorativo dinámico -->
+      <div
+        class="absolute inset-0 opacity-20 bg-[url('/pattern.svg')] bg-cover bg-center"
+      >
+      </div>
+
+      <div class='relative max-w-3xl mx-auto px-6'>
+        <h2
+          class='text-3xl md:text-4xl font-extrabold text-gray-900 leading-tight'
+        >
+          Transforma tu gestión de <span class='text-violet-700'
+            >Recursos Humanos</span
+          >
+          y potencia el <span class='text-teal-700'
+            >rendimiento de tu equipo</span
+          >.
+        </h2>
+
+        <p class='mt-6 text-gray-700 text-lg md:text-xl'>
+          Cada día sin optimizar tu talento humano es tiempo y dinero que tu
+          empresa pierde. Hoy puedes dar el primer paso hacia un equipo más
+          productivo, motivado y feliz.
+        </p>
+
+        <a
+          href='https://wa.me/573001112233?text=Hola%20Cata,%20quiero%20mi%20diagnóstico%20gratuito'
+          class='mt-8 inline-block bg-violet-600 text-white text-lg font-medium px-10 py-4 rounded-full shadow-lg hover:scale-105 hover:bg-violet-700 transition-all duration-300'
+        >
+          🚀 Agenda tu asesoría gratuita
+        </a>
+
+        <!-- Nota de urgencia -->
+        <p class='mt-4 text-sm text-gray-600'>
+          Cupos limitados este mes — asegura tu diagnóstico sin costo.
+        </p>
+      </div>
+    </section>
+
+    <!-- Formulario -->
+    <Leads />
+  </main>
 </Layout>
