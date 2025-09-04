@@ -1,0 +1,74 @@
+---
+import LogoEmpresa from '../assets/logo-cata-duque.png';
+import CataPhoto from '../assets/cata_duque_hero.jpg';
+---
+
+<section class="relative bg-tertiary text-white">
+    <div class="absolute inset-0">
+        <img
+            src="/hero-bg.jpg"
+            alt="Personas trabajando en equipo en oficina"
+            class="w-full h-full object-cover opacity-30"
+        />
+        <div
+            class="absolute inset-0 bg-gradient-to-r from-tertiary via-tertiary/80 to-tertiary/60"
+        >
+        </div>
+    </div>
+
+    <div
+        class="relative z-10 max-w-6xl mx-auto px-6 lg:px-12 py-20 flex flex-col lg:flex-row items-center gap-12"
+    >
+        <!-- Columna izquierda -->
+        <div class="flex-1 text-center lg:text-left">
+            <img
+                src={LogoEmpresa.src}
+                alt="Logo Cata Duque Consultoría"
+                class="h-12 mx-auto lg:mx-0 mb-6"
+            />
+
+            <h1
+                class="text-4xl lg:text-5xl font-extrabold leading-tight text-white hero-title"
+            >
+                Impulsa tu equipo con <span class="text-secondary"
+                    >gestión humana estratégica</span
+                >
+            </h1>
+
+            <p
+                class="mt-6 text-lg lg:text-xl text-gray-100 max-w-lg mx-auto lg:mx-0 hero-subtitle"
+            >
+                Más de 9 años ayudando a líderes de RRHH a reducir la rotación,
+                aumentar la satisfacción de los equipos y optimizar procesos de
+                talento humano.
+            </p>
+
+            <!-- CTA -->
+            <div
+                class="mt-8 flex flex-col sm:flex-row gap-4 justify-center lg:justify-start"
+            >
+                <a
+                    href="#form"
+                    class="px-6 py-3 bg-secondary text-tertiary font-semibold rounded-xl shadow-md hover:bg-secondary/90 transition cta-button"
+                >
+                    Quiero mi diagnóstico
+                </a>
+                <a
+                    href="#beneficios"
+                    class="px-6 py-3 border-2 border-white text-white font-semibold rounded-xl hover:bg-white hover:text-[#11174b] transition cta-button"
+                >
+                    Ver beneficios
+                </a>
+            </div>
+        </div>
+
+        <!-- Columna derecha (imagen) -->
+        <div class="flex-1">
+            <img
+                src={CataPhoto.src}
+                alt="Catalina Duque, consultora en gestión humana"
+                class="w-80 lg:w-full max-w-lg mx-auto rounded-2xl shadow-card"
+            />
+        </div>
+    </div>
+</section>
